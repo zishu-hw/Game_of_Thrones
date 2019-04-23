@@ -150,7 +150,7 @@ func sendMail(filename string) error {
 	m.SetHeader("Subject", "Gomail") // 主题
 	m.SetBody("text/html", "字幕")     // 正文
 	m.Attach("./" + filename)
-	d := gomail.NewDialer("smtp.qq.com", 465, "305584612@qq.com", "****************")
+	d := gomail.NewDialer("smtp.qq.com", 465, "305584612@qq.com", "****") // 服务器地址，端口，邮箱，密码
 	d.TLSConfig = &tls.Config{InsecureSkipVerify: true}
 	err := d.DialAndSend(m)
 	return err
